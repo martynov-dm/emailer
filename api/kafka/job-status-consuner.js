@@ -1,5 +1,5 @@
 import Kafka from "node-rdkafka";
-import {EMAIL_PROCESS_TOPIC, EMAIL_TRIGGER_TOPIC} from "./topic-names.js";
+import { EMAIL_PROCESS_TOPIC } from "./topic-names.js";
 import { updateState } from "../jobs-state/jobs-state.js";
 import url from "../urls.js";
 
@@ -34,7 +34,7 @@ consumer.on('ready', (info) => {
     const stateStr = data.value.toString()
     const state  = JSON.parse(stateStr)
 
-    console.log('received job state ' + data)
+    console.log('received job state ' + stateStr)
 
     updateState(state)
 });
