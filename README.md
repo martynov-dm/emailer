@@ -20,3 +20,7 @@
     
 7) `npm run run:all`
 8) open http://localhost:3000/
+
+env - node.js 16.16.0 + mac m1pro + macOS 12.1
+
+I really tried to deploy it that's why use see Docker files, but deployment is not yet done
