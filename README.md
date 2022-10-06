@@ -21,7 +21,15 @@
     --bootstrap-server localhost:9092 \
     --replication-factor 1 \
     --partitions 1 \
-    --topic email_process_topic`
+    --topic email_process_topic
+        &&
+    docker exec -it kafka /opt/bitnami/kafka/bin/kafka-topics.sh \
+    --create \
+    --bootstrap-server localhost:9092 \
+    --replication-factor 1 \
+    --partitions 1 \
+    --topic email_trigger_topic
+    `
     
 7) `npm run run:all`
 8) open http://localhost:3000/
