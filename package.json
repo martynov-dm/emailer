@@ -1,0 +1,24 @@
+{
+  "name": "emailer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "install:all": "npm i && (cd api && npm install); (cd worker && npm install); (cd next-server && npm install)",
+    "run:all": "concurrently --kill-others \"cd api && npm run dev\" \"cd worker && npm run dev\" \"cd next-server && npm run dev\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/martynov-dm/emailer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/martynov-dm/emailer/issues"
+  },
+  "homepage": "https://github.com/martynov-dm/emailer#readme",
+  "dependencies": {
+    "concurrently": "^7.4.0"
+  }
+}

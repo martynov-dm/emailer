@@ -42,7 +42,7 @@ export default function Form() {
 
 
     function onSubmit(values: any) {
-        return axios.post(`/api/email-submit`, values)
+        return axios.post(`http://${url.api}/api/email-submit`, values)
             .then(({ data }) => {
                 reset()
                 return alert(JSON.stringify(data))
