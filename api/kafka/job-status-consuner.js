@@ -31,37 +31,16 @@ consumer.on('ready', (info) => {
     consumer.subscribe([EMAIL_PROCESS_TOPIC]);
     consumer.consume();
 }).on('data', function(data) {
-    // const stateStr = data.value.toString()
-    // const state  = JSON.parse(stateStr)
+    const stateStr = data.value.toString()
+    const state  = JSON.parse(stateStr)
 
     console.log('received job state ' + data)
 
-    // updateState(state)
+    updateState(state)
 });
 
 export const connectConsumer = () => {
     if (consumer.isConnected()) return
-
-    const stream = Kafka.Producer.createWriteStream({
-        'metadata.broker.list': url.kafka
-    }, {}, {
-        topic: EMAIL_PROCESS_TOPIC
-    });
-
-    stream.on('error', (err) => {
-        console.error('Error in our kafka stream');
-        console.error(err);
-    });
-
-    setInterval(() => {
-        const success = stream.write(Buffer.from('test'));
-        if (success) {
-            console.log(`message queued (test)`);
-        } else {
-            console.log('Could not send message');
-        }
-    }, 1000)
-
 
     consumer.connect();
 }
