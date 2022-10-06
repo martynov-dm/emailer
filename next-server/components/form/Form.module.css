@@ -1,0 +1,16 @@
+.formWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 15%;
+  min-width: 300px;
+}
+
+.button {
+  width: 100%;
+}
+
+.textarea {
+  padding: 0.5rem 1rem;
+}

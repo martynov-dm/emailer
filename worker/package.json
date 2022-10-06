@@ -1,0 +1,12 @@
+{
+  "type": "module",
+  "dependencies": {
+    "body-parser": "*",
+    "node-rdkafka": "^2.13.0",
+    "nodemon": "^2.0.20"
+  },
+  "scripts": {
+    "dev": "nodemon",
+    "start": "node index.js"
+  }
+}
